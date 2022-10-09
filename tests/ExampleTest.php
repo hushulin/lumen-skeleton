@@ -18,4 +18,22 @@ class ExampleTest extends TestCase
             $this->app->version(), $this->response->getContent()
         );
     }
+
+    public function testDB()
+    {
+        $this->get('/test');
+        $this->assertResponseOk();
+    }
+
+    public function testMakeOrder()
+    {
+        $this->get('/make-order');
+        $this->assertResponseOk();
+    }
+
+    public function testUpdateOrder()
+    {
+        $this->get('/update-order');
+        $this->assertResponseOk();
+    }
 }

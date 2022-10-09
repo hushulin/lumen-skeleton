@@ -99,7 +99,6 @@ $app->configure('database');
 // $app->register(App\Providers\EventServiceProvider::class);
 
 $app->register(Hushulin\LaravelEloquentRqlite\LaravelEloquentRqliteServiceProvider::class);
-
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
