@@ -6,7 +6,7 @@ require_once __DIR__.'/../vendor/autoload.php';
     dirname(__DIR__)
 ))->bootstrap();
 
-date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
+date_default_timezone_set(env('APP_TIMEZONE', 'PRC'));
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +23,11 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->withFacades();
+$app->withFacades(true, [
+    \Illuminate\Support\Facades\Event::class => 'LumenEvent',
+]);
 
-// $app->withEloquent();
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +62,7 @@ $app->singleton(
 */
 
 $app->configure('app');
+$app->configure('database');
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +97,8 @@ $app->configure('app');
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+
+$app->register(Hushulin\LaravelEloquentRqlite\LaravelEloquentRqliteServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
