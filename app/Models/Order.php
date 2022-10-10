@@ -30,7 +30,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\Carbon $updated_at
  * @method static create(array $array)
  */
-class Order extends Model
+class Order extends RqliteModel
 {
 
     protected $connection = 'rqlite';

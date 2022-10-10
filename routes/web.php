@@ -22,7 +22,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/test' , function () use ($router) {
-    return DB::connection('rqlite')->table('laravel_eloquent_rqlite_table')->where('id', '<', 3)->get();
+    return Order::query()->where('id', '>', rand(1000,10000))->take(10)->get();
 });
 
 $router->get('/make-order', function () use ($router) {
@@ -55,10 +55,10 @@ $router->get('/make-order', function () use ($router) {
 
 $router->get('/update-order', function () use ($router) {
     return DB::transaction(function () {
-        Order::query()->where('id', 3)->update([
+        Order::query()->where('id', rand(1000,10000))->update([
             'open_id' => uniqid()
         ]);
-        OrderItem::query()->where('id', 3)->update([
+        OrderItem::query()->where('id', rand(1000,100000))->update([
             'drug_name' => uniqid()
         ]);
     });
