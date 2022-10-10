@@ -8,6 +8,7 @@ RUN sed -i 's/upload_max_filesize\ =\ 2M/upload_max_filesize\ =\ 10M/g' /usr/loc
 RUN sed -i 's/post_max_size\ =\ 8M/post_max_size\ =\ 10M/g' /usr/local/etc/php/php.ini
 RUN sed -i 's/memory_limit\ =\ 128M/memory_limit\ =\ 4096M/g' /usr/local/etc/php/php.ini
 RUN sed -i 's/max_execution_time\ =\ 30/max_execution_time\ =\ 600/g' /usr/local/etc/php/php.ini
+RUN sed -i 's/pm.max_children\ =\ 5/pm.max_children\ =\ 17/g' /usr/local/etc/php-fpm.d/www.conf
 
 RUN apt-get update && apt-get install -y libevent-dev openssl libssl-dev
 RUN docker-php-ext-install sockets && docker-php-ext-enable sockets
