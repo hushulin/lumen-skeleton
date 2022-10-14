@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4d1b5c93f0a5623053e328350dcd453",
+    "content-hash": "b0803f5716d65d082b84198a9f01df59",
     "packages": [
         {
             "name": "brick/math",
@@ -1176,23 +1176,17 @@
         },
         {
             "name": "hushulin/laravel-eloquent-rqlite",
-            "version": "1.2.5",
+            "version": "1.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hushulin/laravel-eloquent-rqlite.git",
-                "reference": "0c3360c8e0c3ddcd723219632b627cf01f4a2df4"
+                "reference": "360dd8a3aca7e06427dc634d21706fe0f085bc58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hushulin/laravel-eloquent-rqlite/zipball/0c3360c8e0c3ddcd723219632b627cf01f4a2df4",
-                "reference": "0c3360c8e0c3ddcd723219632b627cf01f4a2df4",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/hushulin/laravel-eloquent-rqlite/zipball/360dd8a3aca7e06427dc634d21706fe0f085bc58",
+                "reference": "360dd8a3aca7e06427dc634d21706fe0f085bc58",
+                "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "^3.1",
@@ -1232,7 +1226,25 @@
                     "Hushulin\\LaravelEloquentRqlite\\Database\\Factories\\": "database/factories"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Hushulin\\LaravelEloquentRqlite\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "analyse": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "test": [
+                    "vendor/bin/pest"
+                ],
+                "test-coverage": [
+                    "vendor/bin/pest --coverage"
+                ],
+                "format": [
+                    "vendor/bin/pint"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -1251,10 +1263,10 @@
                 "laravel-eloquent-rqlite"
             ],
             "support": {
-                "issues": "https://github.com/hushulin/laravel-eloquent-rqlite/issues",
-                "source": "https://github.com/hushulin/laravel-eloquent-rqlite/tree/1.2.5"
+                "source": "https://github.com/hushulin/laravel-eloquent-rqlite/tree/1.2.9",
+                "issues": "https://github.com/hushulin/laravel-eloquent-rqlite/issues"
             },
-            "time": "2022-10-04T03:02:51+00:00"
+            "time": "2022-10-14T08:03:10+00:00"
         },
         {
             "name": "illuminate/auth",
